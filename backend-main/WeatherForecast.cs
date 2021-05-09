@@ -1,6 +1,6 @@
 using System;
 
-namespace backend_main
+namespace App.Main
 {
     public class WeatherForecast
     {
