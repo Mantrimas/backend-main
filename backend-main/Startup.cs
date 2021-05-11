@@ -85,6 +85,9 @@ namespace App.Main
             });
 
             services.AddScoped<ICaseRepository, CaseRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+            services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<ICaseService, CaseService>();
 
             services.AddControllers();
