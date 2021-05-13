@@ -21,7 +21,10 @@ namespace App.Data.DTOs
                 LastName = entity.LastName,
                 Email = entity.Email,
                 Phone = entity.Phone,
-                Password = entity.Password,
+                Address = entity.Address,
+                Citizenship = entity.Citizenship,
+                NationalId = entity.NationalId,
+                BirthDate = entity.BirthDate,
                 CustomerType = entity.CustomerType
             };
         }
@@ -40,7 +43,13 @@ namespace App.Data.DTOs
 
         public string Phone { get; set; }
 
-        public string Password { get; set; }
+        public string Address { get; set; }
+
+        public string Citizenship { get; set; }
+
+        public string NationalId { get; set; }
+
+        public DateTimeOffset BirthDate { get; set; }
 
         public CustomerType CustomerType { get; set; }
     }

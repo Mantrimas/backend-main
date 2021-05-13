@@ -19,7 +19,13 @@ namespace App.Data.Entities
 
         public string Phone { get; set; }
 
-        public string Password { get; set; }
+        public string Address { get; set; }
+
+        public string Citizenship { get; set; }
+
+        public string NationalId { get; set; }
+
+        public DateTimeOffset BirthDate { get; set; }
 
         [Column(TypeName = "nvarchar(24)")]
         public CustomerType CustomerType { get; set; }

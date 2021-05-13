@@ -57,7 +57,10 @@ namespace App.Main.Services
                 LastName = model.LastName,
                 Phone = model.Phone,
                 Email = model.Email,
-                Password = model.Password,
+                Address = model.Address,
+                Citizenship = model.Citizenship,
+                NationalId = model.NationalId,
+                BirthDate = model.BirthDate,
                 CustomerType = model.CustomerType
             };
 
@@ -90,7 +93,10 @@ namespace App.Main.Services
             entity.LastName = model.LastName;
             entity.Phone = model.Phone;
             entity.Email = model.Email;
-            entity.Password = model.Password;
+            entity.Address = model.Address;
+            entity.Citizenship = model.Citizenship;
+            entity.NationalId = model.NationalId;
+            entity.BirthDate = model.BirthDate;
             entity.CustomerType = model.CustomerType;
             _customerRepository.Update(entity);
             await _customerRepository.SaveAsync();
