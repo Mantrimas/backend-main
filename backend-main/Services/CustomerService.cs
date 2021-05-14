@@ -21,7 +21,7 @@ namespace App.Main.Services
             var entity = await _customerRepository.GetByIdAsync(id);
             if (entity == null)
             {
-                throw new Exception("Case not found");
+                throw new Exception("Customer not found");
             }
             return entity.ToModel();
         }
@@ -31,7 +31,7 @@ namespace App.Main.Services
             var entityList = _customerRepository.Find(x => x.Id == id);
             if (entityList == null)
             {
-                throw new Exception("No cases found");
+                throw new Exception("No customers found");
             }
             var modelList = new List<CustomerDTO>();
             foreach (var entity in entityList)
@@ -74,7 +74,7 @@ namespace App.Main.Services
             var entity = await _customerRepository.GetByIdAsync(id);
             if (entity == null)
             {
-                throw new Exception("Case not found");
+                throw new Exception("Customer not found");
             }
             _customerRepository.Delete(entity);
             await _customerRepository.SaveAsync();
@@ -85,7 +85,7 @@ namespace App.Main.Services
             var entity = await _customerRepository.GetByIdAsync(model.Id);
             if (entity == null)
             {
-                throw new Exception("Case not found");
+                throw new Exception("Customer not found");
             }
 
             entity.Id = model.Id;

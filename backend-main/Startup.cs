@@ -86,9 +86,11 @@ namespace App.Main
 
             services.AddScoped<ICaseRepository, CaseRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICaseCommentRepository, CaseCommentRepository>();
 
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<ICaseService, CaseService>();
+            services.AddScoped<ICaseCommentService, CaseCommentService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -1,4 +1,5 @@
 ﻿using App.Data.DTOs;
+using App.Data.DTOs.Requests;
 using App.Data.Models;
 using App.Main.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -69,12 +70,12 @@ namespace App.Main.Controllers
         }
 
         [HttpPut]
-        public async Task<CaseDTO> EditAsync([FromBody] CaseDTO model)
+        public async Task<CaseDTO> EditAsync([FromBody] CaseEditRequest model)
         {
-            if (!TryValidateModel(model))
-            {
-                throw new Exception("400");
-            }
+            //if (!TryValidateModel(model))
+            //{
+            //    throw new Exception("400");
+            //}
 
             return await _caseService.EditAsync(model);
         }

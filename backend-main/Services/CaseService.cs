@@ -1,4 +1,5 @@
 ﻿using App.Data.DTOs;
+using App.Data.DTOs.Requests;
 using App.Data.Entities;
 using App.Main.Repositories;
 using System;
@@ -74,7 +75,9 @@ namespace App.Main.Services
                 CreatedAt = model.CreatedAt,
                 CaseNumber = model.CaseNumber,
                 ActivityFlag = model.ActivityFlag,
-                Description = model.Description
+                Description = model.Description,
+                CaseStatus = model.CaseStatus,
+                Decision = model.Decision
             };
 
             await _cacheRepository.InsertAsync(entity);
@@ -93,7 +96,7 @@ namespace App.Main.Services
             await _cacheRepository.SaveAsync();
         }
 
-        public async Task<CaseDTO> EditAsync(CaseDTO model)
+        public async Task<CaseDTO> EditAsync(CaseEditRequest model)
         {
             var entity = await _cacheRepository.GetByIdAsync(model.Id);
             if (entity == null)
@@ -101,12 +104,15 @@ namespace App.Main.Services
                 throw new Exception("Case not found");
             }
 
-            entity.UserId = model.UserId;
-            entity.CustomerId = model.CustomerId;
-            entity.CreatedAt = model.CreatedAt;
-            entity.CaseNumber = model.CaseNumber;
-            entity.ActivityFlag = model.ActivityFlag;
-            entity.Description = model.Description;
+            //entity.UserId = model.UserId;
+            //entity.CustomerId = model.CustomerId;
+            //entity.CreatedAt = model.CreatedAt;
+            //entity.CaseNumber = model.CaseNumber;
+            //entity.ActivityFlag = model.ActivityFlag;
+            //entity.Description = model.Description;
+            entity.CaseStatus = model.CaseStatus;
+            entity.Decision = model.Decision;
+
             _cacheRepository.Update(entity);
             await _cacheRepository.SaveAsync();
 

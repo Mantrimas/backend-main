@@ -1,4 +1,5 @@
 ﻿using App.Data.DTOs;
+using App.Data.DTOs.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,6 @@ namespace App.Main.Services
         Task<IEnumerable<CaseDTO>> GetAllAsync();
         Task<Guid> CreateAsync(CaseDTO model);
         Task DeleteAsync(Guid id);
-        Task<CaseDTO> EditAsync(CaseDTO model);
+        Task<CaseDTO> EditAsync(CaseEditRequest model);
     }
 }

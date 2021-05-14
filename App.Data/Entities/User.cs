@@ -21,5 +21,7 @@ namespace App.Data.Entities
 
 
         public virtual ICollection<Case> Cases { get; set; }
+
+        public virtual ICollection<CaseComment> CaseComments { get; set; }
     }
 }

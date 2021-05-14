@@ -26,7 +26,9 @@ namespace App.Data.DTOs
                 CaseNumber = entity.CaseNumber,
                 CreatedAt = entity.CreatedAt,
                 ActivityFlag = entity.ActivityFlag,
-                Description = entity.Description
+                Description = entity.Description,
+                CaseStatus = entity.CaseStatus,
+                Decision = entity.Decision
             };
         }
     }
@@ -45,6 +47,11 @@ namespace App.Data.DTOs
         public DateTimeOffset CreatedAt { get; set; }
 
         public ActivityFlag ActivityFlag { get; set; }
+
+        public CaseStatus CaseStatus { get; set; }
+
+        public string Decision { get; set; }
+
 
         [Required]
         [StringLength(200)]

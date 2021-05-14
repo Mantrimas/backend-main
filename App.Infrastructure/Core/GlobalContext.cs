@@ -25,8 +25,7 @@ namespace App.Infrastructure.Core
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<User> DbUsers { get; set; }
-
-
+        public DbSet<CaseComment> CaseComments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -38,6 +37,11 @@ namespace App.Infrastructure.Core
             builder
                 .Entity<Transaction>()
                 .Property(e => e.TransactionType)
+                .HasConversion<string>();
+
+            builder
+                .Entity<Case>()
+                .Property(e => e.CaseStatus)
                 .HasConversion<string>();
 
             base.OnModelCreating(builder);

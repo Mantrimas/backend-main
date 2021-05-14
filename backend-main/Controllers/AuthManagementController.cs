@@ -145,6 +145,15 @@ namespace App.Main.Controllers
             });
         }
 
+        [HttpGet]
+        [Route("Logout")]
+        public async Task<IActionResult> Logout()
+        {
+            Response.Cookies.Delete("jwt");
+
+            return Ok();
+        }
+
         private string GenerateJwtToken(IdentityUser user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
