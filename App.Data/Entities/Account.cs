@@ -9,6 +9,8 @@ namespace App.Data.Entities
         [Key]
         public Guid Id { get; set; }
 
+        public Guid? CustomerId { get; set; }
+
         public string AccountNumber { get; set; }
 
 

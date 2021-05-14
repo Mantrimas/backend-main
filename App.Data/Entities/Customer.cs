@@ -33,6 +33,6 @@ namespace App.Data.Entities
 
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<Case> Cases { get; set; }
-
+        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

@@ -2,9 +2,10 @@
 {
     public enum TransactionType
     {
-        Internal = 0,
-        External,
+        Salary = 0,
         CashDeposit,
-        CashWithdrawal
+        TransferFromPerson,
+        TransferFromCompany,
+        InvestmentReturn,
     }
 }

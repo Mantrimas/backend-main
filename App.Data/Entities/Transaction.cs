@@ -10,6 +10,10 @@ namespace App.Data.Entities
         [Key]
         public Guid Id { get; set; }
 
+        public Guid AccountId { get; set; }
+
+        public Guid CustomerId { get; set; }
+
         public DateTimeOffset Date { get; set; }
 
         public double Amount { get; set; }
@@ -21,5 +25,6 @@ namespace App.Data.Entities
 
 
         public Account Account { get; set; }
+        public Customer Customer { get; set; }
     }
 }
