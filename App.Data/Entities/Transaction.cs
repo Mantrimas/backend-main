@@ -20,6 +20,8 @@ namespace App.Data.Entities
 
         public string Details { get; set; }
 
+        public string Accoun
+
         [Column(TypeName = "nvarchar(24)")]
         public TransactionType TransactionType { get; set; }
 
